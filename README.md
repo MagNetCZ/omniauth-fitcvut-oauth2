@@ -1,4 +1,4 @@
-# OmniAuth SoundCloud
+# OmniAuth CTU FIT
 
 This gem contains the ČVUT/CTU FIT OAuth 2.0 strategy for OmniAuth 1.0.
 
