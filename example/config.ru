@@ -1,10 +1,10 @@
 require 'bundler/setup'
 require 'sinatra/base'
-require 'omniauth-soundcloud'
+require 'omniauth-fitcvut-oauth2'
 
 class App < Sinatra::Base
   get '/' do
-    redirect '/auth/soundcloud'
+    redirect '/auth/fitcvut_oauth2'
   end
 
   get '/auth/:provider/callback' do
@@ -21,7 +21,7 @@ end
 use Rack::Session::Cookie
 
 use OmniAuth::Builder do
-  provider :soundcloud, ENV['APP_ID'], ENV['APP_SECRET'], :scope => 'non-expiring'
+  provider :fitcvut_oauth2, ENV['APP_ID'], ENV['APP_SECRET']
 end
 
 run App.new

@@ -1,0 +1,1 @@
+require File.join('omniauth', 'strategies', 'fitcvut_oauth2')
