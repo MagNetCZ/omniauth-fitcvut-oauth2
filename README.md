@@ -7,7 +7,7 @@ This gem contains the ČVUT/CTU FIT OAuth 2.0 strategy for OmniAuth 1.0.
 Add to your `Gemfile`:
 
 ```ruby
-gem 'omniauth-fitcvut-oauth2', '~> 0.1.0'
+gem 'omniauth-fitcvut-oauth2', '~> 0.2.1'
 ```
 
 Then `bundle install`.
@@ -15,7 +15,7 @@ Then `bundle install`.
 ## Basic Usage
 
     use OmniAuth::Builder do
-    	provider "fitcvut", ENV['FIT_APP_ID'], ENV['FIT_APP_SECRET']
+    	provider "fitcvut_oauth2", ENV['FIT_APP_ID'], ENV['FIT_APP_SECRET']
     end
 
 ## Auth Hash
