@@ -5,7 +5,7 @@ module OmniAuth
     class FITCVUTOauth2 < OmniAuth::Strategies::OAuth2
       DEFAULT_SCOPE = 'non-expiring'
 
-      option :name, "fitcvut_oauth2"
+      option :name, "fitcvut"
 
       option :client_options, {
         :site => 'https://auth.fit.cvut.cz',
@@ -37,3 +37,4 @@ module OmniAuth
 end
 
 OmniAuth.config.add_camelization 'fitcvut_oauth2', 'FITCVUTOauth2'
+OmniAuth.config.add_camelization 'fitcvut', 'FITCVUT'
