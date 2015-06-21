@@ -1,13 +1,13 @@
 # OmniAuth SoundCloud
 
-This gem contains the SoundCloud strategy for OmniAuth 1.0.
+This gem contains the ČVUT/CTU FIT OAuth 2.0 strategy for OmniAuth 1.0.
 
 ## Installing
 
 Add to your `Gemfile`:
 
 ```ruby
-gem 'omniauth-soundcloud', '~> 1.0.0'
+gem 'omniauth-fitcvut-oauth2', '~> 0.0'
 ```
 
 Then `bundle install`.
@@ -15,52 +15,47 @@ Then `bundle install`.
 ## Basic Usage
 
     use OmniAuth::Builder do
-    	provider "soundcloud", ENV['SOUNDCLOUD_CLIENT_ID'], ENV['SOUNDCLOUD_SECRET']
+    	provider "fitcvut", ENV['FIT_APP_ID'], ENV['FIT_APP_SECRET']
     end
-
-## Supported Flows
-
-Supports the Server-side Flow as described in the the [SoundCloud docs](http://developers.soundcloud.com/docs/api/authentication#authorization-code-flow).
 
 ## Auth Hash
 
 Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
 ```ruby
 {
-  "provider" => "soundcloud",
-  "uid" => 12345678,
+  "provider" => "fitcvut",
+  "uid" => "username",
   "info" => {
-    "name" => "Soundcloud User",
-    "nickname" => "soundclouder",
-    "image" => "https://the.image.url",
-    "location" => "Soundcloud Town"
+    "name" => "username",
+    "email" => "username@fit.cvut.cz"
   },
   "credentials" => {
-    "token" => "123-321",
-    "expires" => false
+    "token" => "0000000-0000-0000-0000-000000000000",
+    "refresh_token": "0000000-0000-0000-0000-000000000000",
+    "expires_at": 1442689203,
+    "expires": true
   },
   "extra" => {
     "raw_info" => {
-      "id" => 12345678,
-      "kind" => "user",
-      "permalink" => "soundclouder",
-      "username" => "soundclouder",
-      "full_name" => "Soundcloud User",
-      "uri" => "https://api.soundcloud.com/users/12345678",
-      "permalink_url" => "http://soundcloud.com/soundclouder",
-      "avatar_url" => "https://the.image.url",
-      "country" => "United States",
-      "city" => "Soundcloud Town",
-      "online" => true,
-      "track_count" => 23,
-      "playlist_count" => 12,
-      "public_favorites_count" => 123,
-      "followers_count" => 321,
-      "followings_count" => 234,
-      "plan" => "Free",
-      "private_tracks_count" => 0,
-      "private_playlists_count" => 0,
-      "primary_email_confirmed" => true
+      "client_id": "00000000-0000-0000-0000-000000000000",
+      "scope": [],
+      "audience": [],
+      "client_authorities": [
+        "ROLE_CLIENT"
+      ],
+      "expires_in": 7772621,
+      "user_id": "username",
+      "user_email": "username@fit.cvut.cz",
+      "user_authorities": [
+        "ROLE_R",
+        "ROLE_E",
+        "ROLE_L",
+        "ROLE_S",
+        "ROLE_U",
+        "ROLE__",
+        "ROLE_O"
+      ],
+      "client_only": false
     }
   }
 }
@@ -68,7 +63,8 @@ Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
 
 ## License
 
-Copyright (c) 2011 by Lee Martin and SoundCloud
+Copyright (c) 2015 by Dominik Jancik based on
+Copyright (c) 2011 by Lee Martin and SoundCloud 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
